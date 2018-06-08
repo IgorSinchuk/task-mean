@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router'; 
+import { FormsModule } from '@angular/forms'; 
 
 const appRoutes: Routes = [
   {
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule, 
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
