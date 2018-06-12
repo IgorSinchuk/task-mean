@@ -52,7 +52,40 @@ router.post('/login', (req, res) => {
 })
 
 router.get('/events', (req, res) => {
-    
+    let events = [
+        {
+            "id": "2", 
+            "name": "Igor",
+            "desription": "human", 
+            "data": "1991-10-29"
+        },
+        {
+            "id": "3", 
+            "name": "Tommy",
+            "desription": "cat", 
+            "data": "2015-08-01"
+        }
+    ]
+    res.json(events);
+})
+
+
+router.get('/special', (req, res) => {
+    let events = [
+        {
+            "id": "2", 
+            "name": "Igor",
+            "desription": "human", 
+            "data": "1991-10-29"
+        },
+        {
+            "id": "3", 
+            "name": "Tommy",
+            "desription": "cat", 
+            "data": "2015-08-01"
+        }
+    ]
+    res.json(events);
 })
 
 module.exports = router;
