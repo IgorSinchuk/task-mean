@@ -38,6 +38,7 @@ router.post('/login', (req, res) => {
             console.log(error)
         } else {
             if(!user) {
+                alert('Invalid email!')
                 res.status(401).send('Invalid email')
             } else 
                 if (user.password !== userData.password) {

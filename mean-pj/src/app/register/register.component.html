@@ -19,6 +19,8 @@
               <input type="password" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
             </div>
             <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+            <a routerLink="/login" routerLinkActivate="activate">
+              <button type="button">To login</button></a>
           </form>
         </div>
         <!--/card-block-->
