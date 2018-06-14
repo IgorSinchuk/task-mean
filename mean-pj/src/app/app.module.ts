@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { SteamComponent } from './steam/steam.component';
 import { RiotComponent } from './riot/riot.component';
 import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AuthService } from './auth.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
