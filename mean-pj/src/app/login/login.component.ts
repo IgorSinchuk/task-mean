@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -8,6 +12,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  public router: Router;
   loginUserData = {}
   constructor(private _auth: AuthService) { }
 
@@ -16,9 +21,8 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this._auth.loginUser(this.loginUserData).subscribe(
-      res => console.log(res),
-      err => console.log(err)
-      )
+      res => location.href = '/home',
+      err => alert('Something went wrong(')
+      )  
+      }
   }
-
-}

@@ -12,9 +12,10 @@ export class AuthService {
 
   registerUser(user) {
     return this.http.post<any>(this._registerUrl, user);
-  }
+  } 
 
   loginUser(user) {
     return this.http.post<any>(this._loginUserUrl, user)
   }
+
 }

@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
 
   registerUser() {
     this._auth.registerUser(this.registerUserData).subscribe(
-      res => console.log(res),
+      res => location.href='/login' ,
       err => console.log(err)
       
       
