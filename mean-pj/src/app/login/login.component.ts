@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this._auth.loginUser(this.loginUserData).subscribe(
-      res => location.href = '/home',
+      res => location.href = '/home',  // add alert 
       err => alert('Something went wrong(')
       )  
       }
