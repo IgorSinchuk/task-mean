@@ -5,13 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './riot.component.html',
   styleUrls: ['./riot.component.css']
 })
+
+
 export class RiotComponent implements OnInit {
 
-  constructor() { }
+public apiKey: "";
+public URL: "";
 
+  
+  constructor() { }
+  
   ngOnInit() {
   }
 
-  
-
 }
+
+

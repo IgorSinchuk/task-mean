@@ -1,17 +1,11 @@
-<div class="login-page">
-  <div class="form">
-    <!-- <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form> -->
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>register</button>
-      <p class="message">Already registered? <a routerLink="/login" routerLinkActive="active">Login</a></p>
+<body>
+  <div class="signin">
+    <form>
+      <h2>Register</h2>
+      <input type="text" name="email" placeholder="Enter email" [(ngModel)]="registerUserData.email" required>
+      <input type="password" name="password" placeholder="Enter password" [(ngModel)]="registerUserData.password" required>
+      <button class="button" type="button" (click)="registerUser()">register</button>
+      <p class="message">Already have an account <a routerLink="/login" routerLinkActive="active">Login in</a></p>
     </form>
   </div>
-</div>
+  </body>

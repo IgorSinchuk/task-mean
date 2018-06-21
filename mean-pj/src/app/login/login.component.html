@@ -1,3 +1,5 @@
+<!-- <body>
+<div class="body">
 <div class="login-page">
   <div class="form">
     <form class="login-form">
@@ -8,3 +10,16 @@
     </form>
   </div>
 </div>
+</div>
+</body> -->
+<body>
+<div class="signin">
+  <form>
+    <h2>Sign in</h2>
+    <input type="text" placeholder="Enter email" [(ngModel)]="loginUserData.email" name="email"  required>
+    <input type="password" placeholder="Enter password" [(ngModel)]="loginUserData.password" name="password"  required>
+    <button class="button" type="button" (click)="loginUser()">login</button>
+    <p class="message">Not registered <a routerLink="/register" routerLinkActive="active">Create an account</a></p>
+  </form>
+</div>
+</body>

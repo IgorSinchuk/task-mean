@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../model/user')
+const User = require('../model/user');
 const mongoose = require('mongoose');
 const db =  "mongodb://root:playstation320@ds151530.mlab.com:51530/demob";
+
 
 mongoose.connect(db, err => {
     if (err) {
@@ -49,6 +50,26 @@ router.post('/login', (req, res) => {
                 
             }
     })
+
+    router.get('/riot', (req, res) => {
+        let data = {};
+        let apiKey = "RGAPI-122df3f1-b1ef-46c3-946a-0fa7486f9f8e";
+        let searchName = "ASFASFASFRFG343";
+        let URL = "https://eun1.api.riotgames.com/lol/summoner/v3/summoners/by-name/" + searchName + "?apiKey=" + apiKey;
+
+        req(URL, function(err, res, body) {
+            if(!err && res.status(200)) {
+                let json = JSON.parse(body);
+                data.id = json[searchName].id;
+                data.name = json[searchName].name;
+            } else {
+                console.log(err);
+                
+            }
+        })
+    })
+
+
 
 })
 
