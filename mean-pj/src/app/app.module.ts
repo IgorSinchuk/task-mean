@@ -10,6 +10,7 @@ import { SteamComponent } from './steam/steam.component';
 import { RiotComponent } from './riot/riot.component';
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { User } from '../../../server/model/User'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     HomeComponent,
     SteamComponent,
-    RiotComponent
+    RiotComponent,
+    User
   ],
   imports: [
     BrowserModule,

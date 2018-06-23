@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const db =  "mongodb://root:playstation320@ds151530.mlab.com:51530/demob";
 
 
+
 mongoose.connect(db, err => {
     if (err) {
         console.log('Error' + err) 
@@ -18,18 +19,38 @@ router.get('/', (req, res) => {
     res.send('From API route')
 })
 
+
+    
 router.post('/register', (req, res) => {
-    let userData = req.body;
-    let user = new User(userData);
-    user.save((error, registeredUser) => {
-        if (error) {
-            console.log(error);
-        } else {
-            res.status(200).send(registeredUser)
-            
-        }
-    })
-})
+    // old method
+        // let userData = req.body;
+        // let user = new User(userData);
+        // user.save((error, registeredUser) => {
+        //     if (error) {
+        //         console.log(error);
+        //     } else {
+        //         res.status(200).send(registeredUser)
+                
+        //     }
+        // });
+
+        let user = new User({
+            email: req.body.email,
+            password: req.body.password
+        });
+
+        user.save((error, registerUserData) => {
+            if (error) {
+                console.log(error);
+                
+            } else {
+                res.status(200).send(registerUserData);
+            }
+        });
+
+
+
+    });
 
 
 router.post('/login', (req, res) => {
@@ -43,13 +64,16 @@ router.post('/login', (req, res) => {
                 } else 
                 if (user.password !== userData.password) {
                     res.status(401).send('Invalid password')
+                    if (user.password === "") {
+                        res.status(401).send('Password cant be NULL')
+                    }
                } else {
                     res.status(200).send(user)
                     
                 }
                 
             }
-    })
+    });
 
     router.get('/riot', (req, res) => {
         let data = {};
@@ -66,11 +90,11 @@ router.post('/login', (req, res) => {
                 console.log(err);
                 
             }
-        })
-    })
+        });
+    });
 
 
 
-})
+});
 
 module.exports = router;
