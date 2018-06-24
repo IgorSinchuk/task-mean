@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
 
     password: {
@@ -13,4 +14,8 @@ const userSchema = new Schema({
     }
 
 })
-module.exports = mongoose.model('user', userSchema, 'users');
+const User = module.exports = mongoose.model('user', userSchema, 'users');
+
+module.exports.getUserByEmail = function() {
+    User.find(email, callback);
+}

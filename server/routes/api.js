@@ -42,11 +42,9 @@ router.post('/register', (req, res) => {
         user.save((error, registerUserData) => {
             if (error) {
                 console.log(error);
-             } else if (email === null && password) {
-                    return;
-                }
-            else {
+               } else {
                 res.status(200).send(registerUserData);
+                ;
             }
         });
 
@@ -57,6 +55,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     let userData = req.body;
+    
     User.findOne({email: userData.email}, (error, user) => {
         if (error) {
             console.log(error)
@@ -67,7 +66,7 @@ router.post('/login', (req, res) => {
                 if (user.password !== userData.password) {
                     res.status(401).send('Invalid password')
                } else {
-                   re.status(200).send(user);
+                   res.status(200).send(user);
                }
             }
     });
