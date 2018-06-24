@@ -42,8 +42,10 @@ router.post('/register', (req, res) => {
         user.save((error, registerUserData) => {
             if (error) {
                 console.log(error);
-                
-            } else {
+             } else if (email === null && password) {
+                    return;
+                }
+            else {
                 res.status(200).send(registerUserData);
             }
         });
@@ -64,15 +66,17 @@ router.post('/login', (req, res) => {
                 } else 
                 if (user.password !== userData.password) {
                     res.status(401).send('Invalid password')
-                    if (user.password === "") {
-                        res.status(401).send('Password cant be NULL')
-                    }
                } else {
-                    res.status(200).send(user)
-                    
-                }
-                
+                   re.status(200).send(user);
+               }
             }
+    });
+
+    router.get('/users', (req, res) => {
+        User.find({}).exec(function(err, res) {
+            if(err) throw new err;
+            res.status(200).send(user);
+        });
     });
 
     router.get('/riot', (req, res) => {

@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
       res => location.href='/login' , // add alert 
       err => console.log(err)
       
-      
     )
     
   }

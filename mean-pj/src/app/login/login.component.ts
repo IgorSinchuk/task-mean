@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { User } from '../../../../server/model/User';
 
 
 
@@ -26,10 +25,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    // this._auth.loginUser(this.loginUserData).subscribe(
-    //   res => location.href = '/home',  // add alert 
-    //   err => alert('Something went wrong(')
-    //   )  
+    this._auth.loginUser(this.loginUserData).subscribe(
+      res => location.href = '/home',  // add alert 
+      err => alert('Something went wrong(')
+      )  
 
   
       }
