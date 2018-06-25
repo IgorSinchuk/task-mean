@@ -5,7 +5,9 @@
       <input type="text" name="email" placeholder="Enter email" [(ngModel)]="registerUserData.email" required>
       <input type="password" name="password" placeholder="Enter password" [(ngModel)]="registerUserData.password" required>
       <button class="button" type="button" (click)="registerUser()">register</button>
+      <div class="loginLink">
       <p class="message">Already have an account <a routerLink="/login" routerLinkActive="active">Login in</a></p>
+    </div>
     </form>
   </div>
   </body>

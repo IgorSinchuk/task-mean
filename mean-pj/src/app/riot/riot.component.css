@@ -40,6 +40,9 @@ h2 {
     padding-left:  10px;
     border-radius: 5px; 
     color: #A3A6AA;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
   }
   
   button {
@@ -52,10 +55,12 @@ h2 {
     border: 0px;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
   }
-  
-  p{
-    /* font-family: Source Sans Pro; */
-    color: #A3A6AA;
-    
+
+  .homeLink{
+      text-align: center;
+      margin-top: 15px; 
   }
+ 
