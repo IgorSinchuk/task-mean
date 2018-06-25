@@ -1,11 +1,24 @@
-DEV KEY
-<br />
-<input id="theKey" />
-<br />Summoner Name
-<br />
-<input id="userName" />
-<input type="submit" onclick="summonerLookUp();" />
-<br />
-<br />Summoner Level: <span id="sLevel"></span>
+<!-- <body>
+  <div class="signin">
+    <form>
+      <h2>Sign in</h2>
+      <input type="text" placeholder="Enter email" [(ngModel)]="loginUserData.email" name="email"  required>
+      <input type="password" placeholder="Enter password" [(ngModel)]="loginUserData.password" name="password"  required>
+      <button class="button" type="button" (click)="loginUser()">login</button>
+      <p class="message">Not registered <a routerLink="/register" routerLinkActive="active">Create an account</a></p>
+    </form>
+  </div>
+  </body> -->
 
-<br />Summoner ID: <span id="sID"></span>
+<div class="main">
+  <div class="search">
+    <h2>Search summoners</h2>
+    <input type="search" type="search" placeholder="Enter summoner name">
+    <button type="text" type="button" (click)="findSummoner()">Submit</button>
+    <div class="homeLink">
+      <a routerLink="/home">Back to home screen</a>
+    </div>
+  </div>
+  </div>
+
+  

@@ -52,6 +52,7 @@ button {
   color: #fff;
   border: 0px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 p{

@@ -7,3 +7,15 @@
     background-size: auto;
     display: table; 
 }
+
+button {
+    width: 332px;
+    height: 50px;
+    font-size: 16px;
+    background: #2196F4;
+    font-weight: lighter;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
